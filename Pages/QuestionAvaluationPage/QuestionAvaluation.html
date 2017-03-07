@@ -1,0 +1,37 @@
+<div class="row" id="question-avaluation-page">
+    <div class="col-md-8">
+        <div class="panel panel-default">
+            <div class="panel-heading"><strong>Questionário #{{questionnaire.id}}</strong></div>
+            <div class="panel-body without-padding"><iframe src="/ViewerJS/#../{{imagem}}" frameborder="0"></iframe></div>
+            <div class="panel-footer"><button class="btn btn-primary" id="close-questionnaire">Fechar Questionário</button></div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Informações</div>
+            <div class="panel-body">
+                <p><strong>Quantidade de questões a corrigir: </strong>{{questionsToSolve}} / {{questionnaire.questions.length}}</p>
+                <div class="form-group">
+                    <label for="question-number">Questão a ser corrigida</label>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="number" class="form-control" id="question-number">
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-default" id="choose-question">Escolher questão</button>
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+                <div id="question-information">
+                    <p class="alert alert-info">Digite acima o número da questão para corrigir</p>
+                </div>
+            </div>
+            
+            <div class="panel-footer">
+                <button class="btn btn-primary" id="avaluate-question">Avaliar Questão</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Filtros</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="filtro-curso">Curso</label>
+                        <select name="" id="filter-course" class="form-control">
+                            {{#each filtering.courses}}
+                            <option value="{{.}}">{{.}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="form-group" style="display: none">
+                        <label for="filtro-disciplina">Disciplina</label>
+                        <select name="" id="filtro-disciplina" class="form-control" disabled>
+                            <option value="teste">teste</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-primary" id="doFilter">Filtrar</button>
+                    <button class="btn btn-danger" id="cleanFilter">Limpar Filtro</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+    {{#each questions}}
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">Questionário #{{id}}</div>
+                <div class="panel-body">
+                    <p><strong>curso: </strong> {{curso}}</p>
+                    <p><strong>disciplina: </strong>{{disciplina}}</p>
+                </div>
+                <div class="panel-footer">
+                    <a href="#avaliaquestao/{{id}}" class="btn btn-primary">Iniciar Correção</a>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+    </div>
+    <div class="row container">
+        <div class="col-md12">
+            <nav aria-label="Page navigation">
+                {{#pagination pagination.currentPage pagination.pageCount pagination.size}}
+                    <ul class="pagination">
+                      {{#unless startFromFirstPage}}
+                        <li><a href>&lt;</a><li>
+                      {{/unless}}
+
+                      {{#each pages}}
+                        {{#if isCurrent}}
+                          <li class="active"><a href data-page="{{page}}">{{page}}</a><li>
+                        {{/if}}
+                        {{#unless isCurrent}}
+                          <li><a href data-page="{{page}}">{{page}}</a></li>
+                        {{/unless}}
+                      {{/each}}
+
+                      {{#unless endAtLastPage}}
+                        <li><a href>&gt;</a></li>
+                      {{/unless}}
+                    </ul>
+                {{/pagination}}
+            </nav>
+        </div>
+    </div> 
+</div>

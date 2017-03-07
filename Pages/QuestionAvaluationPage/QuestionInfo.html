@@ -1,0 +1,21 @@
+<p><strong>Questão: </strong>{{id}}</p>
+
+<div class="form-group">
+    <label for="answer-orientation">Orientação de Resposta</label>
+    <textarea name="" id="answer-orientation" cols="30" rows="5" class="form-control" >{{orientacaoResposta}}</textarea>
+</div>
+<div class="form-group">
+    <label for="feedbackToTheStudent">Feedback Para o Aluno</label>
+    <textarea name="" id="feedback-student" cols="30" rows="5" class="form-control">{{feedback}}</textarea>
+</div>                
+<div class="form-group">
+    <label for="nota">Nota</label>
+    <div class="row">
+        <div class="col-md-9">
+            <input type="range" value="0" min="0" max="{{valor}}" class="form-control" id="nota-slide">
+        </div>
+        <div class="col-md-3">
+            <input type="number" id="nota-text" class="form-control">
+        </div>
+    </div>
+</div>
